@@ -1,0 +1,1929 @@
+@use "../global" as *;
+
+* {
+  box-sizing: border-box;
+  letter-spacing: 0.08rem;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+a {
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+li {
+  list-style-type: none;
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1000px;
+  width: 96%;
+}
+
+body {
+  @include mq(sp) {
+    .wrapper {
+      width: 90%;
+    }
+  }
+}
+
+img {
+  width: 100%;
+}
+
+/* ================================
+common
+================================ */
+.ttl {
+  font-size: clamp(3rem, 2.602rem + 1.87vw, 5rem);
+  @include coda;
+  @include font-ttl-grad;
+  opacity: 0.5;
+  letter-spacing: 0.15rem;
+  padding: 2% 0;
+}
+
+.header-page {
+  margin-bottom: 5%;
+  @include grad;
+  padding-top: 64px;
+  &__top {
+    display: flex;
+    position: relative;
+    &__ttl {
+      font-size: clamp(3rem, 2.602rem + 1.87vw, 5rem);
+      position: absolute;
+      top: 45%;
+      left: 10vw;
+      transform: translateY(-50%);
+      color: white;
+      letter-spacing: 0.2rem;
+      @include coda;
+    }
+    &__contact {
+      background-image: url(../img/page-contact.jpg);
+      background-position: bottom;
+      @include img;
+    }
+    &__about {
+      background-image: url(../img/page-about.jpg);
+      @include img;
+    }
+    &__news {
+      background-image: url(../img/page-news.jpg);
+      @include img;
+    }
+    &__service {
+      background-image: url(../img/page-service.jpg);
+      @include img;
+    }
+    &__works {
+      background-image: url(../img/page-works.jpg);
+      @include img;
+      background-position: bottom;
+    }
+  }
+  &__breadcrumbs {
+    height: 70px;
+    &__list {
+      display: flex;
+      align-items: center;
+      height: 100%;
+      @include txt;
+      &__item {
+        &::after {
+          content: ">";
+          padding: 0 10px;
+          color: #fff;
+        }
+        &:last-child::after {
+          content: "";
+        }
+      }
+    }
+  }
+}
+
+.page-ttl {
+  font-size: clamp(1.8rem, 1.685rem + 0.59vw, 2.4rem);
+  position: relative;
+  display: block;
+  padding-left: 30px;
+  margin-bottom: 4%;
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    position: absolute;
+    top: 45%;
+    left: -5px;
+  }
+}
+
+.pagenation {
+  font-size: clamp(1rem, 0.918rem + 0.42vw, 1.5rem);
+}
+
+/* ================================
+res sp common
+================================ */
+body {
+  @include mq(sp) {
+    .ttl {
+      padding: 5% 0;
+    }
+    .header-page {
+      margin-bottom: 10%;
+      &__top {
+        &__ttl {
+          // top: 50%;
+          // left: 50%;
+          // transform: translate(-50%, -50%);
+          left: 5vw;
+        }
+        &__contact {
+          width: 100%;
+          height: 200px;
+          &__bg {
+            height: 200px;
+          }
+        }
+        &__news {
+          width: 100%;
+          height: 200px;
+          &__bg {
+            height: 200px;
+          }
+        }
+        &__about {
+          width: 100%;
+          height: 200px;
+          &__bg {
+            height: 200px;
+          }
+        }
+        &__works {
+          width: 100%;
+          height: 200px;
+          &__bg {
+            height: 200px;
+          }
+        }
+        &__service {
+          width: 100%;
+          height: 200%;
+          &__bg {
+            height: 200px;
+          }
+        }
+      }
+      &__breadcrumbs {
+        height: 64px;
+        &__list {
+          font-size: clamp(0.5rem, -0.389rem + 4.44vw, 1rem);
+          &__item {
+            &::after {
+              padding: 0 2.5px;
+            }
+          }
+        }
+      }
+    }
+    .page-ttl {
+      margin-bottom: 8%;
+      font-size: clamp(1rem, 0.375rem + 3.23vw, 2rem);
+      padding-left: 10px;
+      &::before {
+        height: 1.5px;
+        width: 14px;
+        left: -8px;
+      }
+    }
+  }
+}
+
+/* ================================
+header 
+================================ */
+.header {
+  @include grad;
+  position: fixed;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 99;
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    width: 98%;
+    margin: 0 auto;
+    &__ttl a {
+      // font-size: clamp(0.7rem, 1.6vw, 1.8rem);
+      font-size: 1.8rem;
+      @include coda;
+      display: flex;
+      align-items: center;
+      line-height: 64px;
+      & h1 {
+        margin-left: 3px;
+      }
+      & img {
+        width: 64px;
+      }
+    }
+    &__menu {
+      &__list {
+        display: flex;
+        &__item {
+          margin-left: 13px;
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+res sp header
+================================ */
+body {
+  @include mq(sp) {
+    .header {
+      &-wrapper {
+        &__ttl {
+          & a {
+            font-size: 1.5rem;
+          }
+          & img {
+            width: 38px;
+            height: 38px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+mainvisual
+================================ */
+.mainvisual {
+  margin-bottom: 3%;
+  @include grad;
+  display: flex;
+  &__catch {
+    color: #fff;
+    @include coda;
+    font-size: clamp(3rem, 2.602rem + 1.87vw, 5rem);
+    letter-spacing: 0.15rem;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    &__top {
+      position: absolute;
+      top: 42%;
+      left: 10vw;
+      white-space: nowrap;
+      z-index: 1;
+    }
+    &__under {
+      position: absolute;
+      top: 57%;
+      left: 15vw;
+      white-space: nowrap;
+      z-index: 1;
+    }
+  }
+  &__spcatch {
+    display: none;
+  }
+  &__img {
+    height: 100vh !important;
+    width: 700%;
+    margin-left: auto;
+    object-fit: cover;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 17% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 17% 100%);
+    & img {
+      width: 100%;
+      margin-left: auto;
+      height: 100vh;
+      object-fit: cover;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 17% 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 17% 100%);
+    }
+  }
+}
+
+/* ================================
+res tab mainvisual
+================================ */
+body {
+  @include mq(tab) {
+    .mainvisual {
+      &__catch {
+        font-size: clamp(2rem, -1.333rem + 11.11vw, 4rem);
+        &__top {
+          top: 44%;
+          left: 3vw;
+        }
+        &__under {
+          top: 55%;
+          left: 3vw;
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+res sp mainvisual
+================================ */
+body {
+  @include mq(sp) {
+    .mainvisual {
+      &__catch {
+        display: none;
+      }
+      &__spcatch {
+        display: block;
+        color: #fff;
+        @include coda;
+        font-size: clamp(2.5rem, 0.25rem + 12vw, 4rem);
+        letter-spacing: 0.15rem;
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        &__top {
+          position: absolute;
+          top: 36%;
+          left: 3vw;
+          white-space: nowrap;
+          z-index: 1;
+        }
+        &__middle {
+          position: absolute;
+          top: 48%;
+          left: 3vw;
+          white-space: nowrap;
+          z-index: 1;
+        }
+        &__under {
+          position: absolute;
+          top: 60%;
+          left: 3vw;
+          white-space: nowrap;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+news
+================================ */
+.news {
+  padding-bottom: 3%;
+  &-wrapper {
+    // background-color: rgb(228, 167, 167);
+    &__contents {
+      width: 80%;
+      margin: 0 auto;
+      background-image: url(../img/news.png);
+      background-position: bottom;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-color: rgba(255, 255, 255, 0.8);
+      background-blend-mode: lighten;
+      &__article {
+        display: flex;
+        padding: 3% 0;
+        font-size: clamp(1rem, 0.94rem + 0.28vw, 1.3rem);
+        border-top: solid 1px lightgray;
+        &:last-of-type {
+          border-bottom: solid 1px lightgray;
+        }
+        @include txt;
+        color: #000;
+        &__box {
+          width: 32%;
+          display: flex;
+          &__date {
+            width: 59%;
+            // text-align: center;
+            // background-color: rgb(228, 210, 210);
+          }
+          &__cat {
+            width: 41%;
+            // text-align: center;
+            // background-color: rgb(236, 186, 186);
+          }
+        }
+        &__txt {
+          width: 68%;
+          // background-color: rgb(201, 71, 71);
+        }
+      }
+      &__button {
+        @include button;
+        text-align: right;
+        padding: 3% 0;
+        & a {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+res tab news
+================================ */
+body {
+  @include mq(tab) {
+    .news {
+      // background-color: rgb(209, 176, 176);
+      &-wrapper {
+        &__contents {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+res sp news
+================================ */
+body {
+  @include mq(sp) {
+    .news {
+      &-wrapper {
+        &__contents {
+          &__article {
+            flex-direction: column;
+            &__box {
+              width: 100%;
+              &__date {
+                width: 100px;
+              }
+              &__cat {
+                width: 30%;
+              }
+            }
+            &__txt {
+              width: 100%;
+            }
+          }
+          &__button {
+            text-align: center;
+            padding: 6% 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+about
+================================ */
+.about {
+  padding-bottom: 3%;
+  &-wrapper {
+    &__flex {
+      display: flex;
+      &__left {
+        position: relative;
+        width: 50%;
+        background-image: url(../img/biwako.png);
+        background-position: right 10% bottom 20%;
+        background-size: 35%;
+        background-repeat: no-repeat;
+        background-color: rgba(255, 255, 255, 0.8);
+        background-blend-mode: lighten;
+        &__catch {
+          position: absolute;
+          @include catch;
+          top: 0;
+          left: 0;
+        }
+        &__txt {
+          position: absolute;
+          @include txt;
+          top: 40%;
+          left: 0;
+        }
+        &__button {
+          position: absolute;
+          @include button;
+          bottom: 0;
+          left: 0;
+          & a {
+            opacity: 1;
+          }
+        }
+      }
+      &__right {
+        width: 50%;
+      }
+    }
+  }
+}
+
+/* ================================
+res tab about
+================================ */
+body {
+  @include mq(tab) {
+    .about {
+      &-wrapper {
+        &__flex {
+          flex-direction: column;
+          &__left {
+            width: 100%;
+            position: static;
+            background-position: right 40% bottom 20%;
+            background-size: 20%;
+            &__catch {
+              position: static;
+            }
+            &__txt {
+              position: static;
+            }
+            &__button {
+              position: static;
+              padding: 3% 0;
+            }
+          }
+          &__right {
+            width: 100%;
+            & img {
+              width: 100%;
+              // height: 30vh;
+              // object-fit: cover;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+res sp about
+================================ */
+body {
+  @include mq(sp) {
+    .about {
+      &-wrapper {
+        &__flex {
+          &__left {
+            background-image: none;
+            &__catch {
+              margin-bottom: 3%;
+            }
+            &__button {
+              text-align: center;
+              padding: 6% 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+service
+================================ */
+.service {
+  padding-top: 2%;
+  background-color: $blue;
+  padding-bottom: 3%;
+  color: #fff;
+  &-wrapper {
+    &__ttl {
+      background: -webkit-linear-gradient(-90deg, #fff, #fff);
+      color: #fff;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      opacity: 1;
+    }
+    &__flex {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      &__left {
+        width: 47%;
+        position: relative;
+        &__catch {
+          position: absolute;
+          @include catch;
+        }
+        &__txt {
+          position: absolute;
+          @include txt;
+          top: 37%;
+          left: 0;
+        }
+        &__button {
+          position: absolute;
+          @include button;
+          bottom: 0;
+          left: 0;
+          & a {
+            color: white;
+            border: 1px solid white;
+            opacity: 1;
+            &:hover {
+              border: 1px solid #000;
+            }
+          }
+        }
+      }
+      &__right {
+        width: 50%;
+        & img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+res tab service
+================================ */
+body {
+  @include mq(tab) {
+    .service {
+      &-wrapper {
+        &__flex {
+          flex-direction: column;
+          &__left {
+            width: 100%;
+            position: static;
+            &__catch {
+              position: static;
+            }
+            &__txt {
+              position: static;
+            }
+            &__button {
+              position: static;
+              padding: 3% 0;
+            }
+          }
+          &__right {
+            width: 100%;
+            & img {
+              // height: 30vh;
+              // object-fit: cover;
+              // background-position: bottom;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+res sp service
+================================ */
+body {
+  @include mq(sp) {
+    .service {
+      &-wrapper {
+        &__flex {
+          &__left {
+            &__catch {
+              margin-bottom: 3%;
+            }
+            &__button {
+              text-align: center;
+              padding: 6% 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+works
+================================ */
+.works {
+  padding-top: 2%;
+  &-wrapper {
+    &__box {
+      margin-bottom: 3%;
+      &__catch {
+        @include catch;
+      }
+      &__txt {
+        @include txt;
+      }
+    }
+    &__slider {
+      display: flex;
+      justify-content: space-between;
+      &__item {
+        color: #000;
+        width: 32%;
+        height: 200px;
+        box-shadow: 0px 0px 16px -6px rgba(0, 0, 0, 0.6);
+        &__img {
+          height: 200px;
+          & img {
+            height: 200px;
+            object-fit: cover;
+          }
+        }
+        &__txt {
+          padding: 4% 4% 8% 4%;
+          @include txt;
+          &__ttl {
+            margin-bottom: 2%;
+          }
+        }
+      }
+    }
+    &__button {
+      @include button;
+      text-align: right;
+      padding: 4% 0 5% 0;
+      & a {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+/* ================================
+res sp works
+================================ */
+body {
+  @include mq(sp) {
+    .works {
+      &-wrapper {
+        &__button {
+          text-align: center;
+          padding: 6% 0;
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+contact
+================================ */
+.contact {
+  background-image: url(../img/contact.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  &-bg {
+    height: 100%;
+    padding-top: 2%;
+    background-color: rgba(0, 0, 0, 0.6);
+    &-wrapper {
+      &__ttl {
+        background: -webkit-linear-gradient(-90deg, #fff, #fff);
+        color: #fff;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        opacity: 1;
+      }
+      &__box {
+        &__catch {
+          @include catch;
+          color: white;
+          &__br {
+            display: none;
+          }
+        }
+        &__txt {
+          @include txt;
+          color: white;
+        }
+        &__button {
+          @include button;
+          padding: 4% 0 5% 0;
+          & a {
+            color: #fff;
+            border: 1px solid white;
+            opacity: 1;
+            &:hover {
+              border: 1px solid rgba(0, 0, 0, 0.1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+res sp contact
+================================ */
+body {
+  @include mq(sp) {
+    .contact {
+      &-bg {
+        &-wrapper {
+          &__box {
+            &__catch {
+              margin-bottom: 3%;
+              &__br {
+                display: inline-block;
+              }
+            }
+            &__button {
+              text-align: center;
+              padding: 6% 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+footer
+================================ */
+.footer {
+  @include grad;
+  &-wrapper {
+    &__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2% 0;
+      &__ttl a {
+        font-size: 1.8rem;
+        @include coda;
+        display: flex;
+        align-items: center;
+        line-height: 64px;
+        & p {
+          margin-left: 3px;
+        }
+        & img {
+          width: 64px;
+        }
+      }
+      &__menu {
+        &__list {
+          display: flex;
+          &__item {
+            margin-left: 13px;
+          }
+        }
+      }
+    }
+    &__under {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 7%;
+      &__add {
+        color: #fff;
+        &__br {
+          display: none;
+        }
+        & p {
+          margin-bottom: 5%;
+          @include txt;
+        }
+      }
+      &__icon {
+        display: flex;
+        & a {
+          &:nth-child(2) {
+            margin-left: 10%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+res tab footer
+================================ */
+body {
+  @include mq(tab) {
+    .footer-wrapper {
+      &__top {
+        &__menu {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+res sp footer
+================================ */
+body {
+  @include mq(sp) {
+    .footer-wrapper {
+      &__top {
+        &__ttl {
+          & a {
+            font-size: 1.5rem;
+          }
+          & img {
+            width: 38px;
+            height: 38px;
+          }
+        }
+      }
+      &__under {
+        &__add {
+          &__br {
+            display: inline-block;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+ハンバーガーメニュー
+================================ */
+body {
+  @include mq(tab) {
+    & .header .drawer {
+      visibility: visible;
+      width: 34px;
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      border-top: solid 2px #fff;
+      cursor: pointer;
+      z-index: 100;
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        width: 34px;
+        background: #fff;
+        height: 2px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: all 0.5s;
+      }
+      &::before {
+        top: 12px;
+      }
+      &::after {
+        top: 26px;
+      }
+    }
+    &.nav-open {
+      & .header {
+        & .drawer {
+          border-top: 0;
+          &::before {
+            top: 9px;
+            transform: rotate(-45deg);
+          }
+          &::after {
+            top: 9px;
+            transform: rotate(45deg);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+ハンバーガーメニュー表示時の画面
+================================ */
+body {
+  @include mq(tab) {
+    & .header {
+      &-wrapper {
+        &__menu {
+          position: fixed;
+          top: 0;
+          left: 0;
+          display: none;
+          width: 100%;
+          height: 100%;
+          z-index: 50;
+          background: #000;
+          background-color: rgba(6, 6, 6, 0.8);
+          background-blend-mode: lighten;
+          &__list {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            &__item {
+              margin: 0 auto;
+              // font-size: 1.5rem;
+              font-size: clamp(1rem, -0.071rem + 5.36vw, 2.5rem);
+              line-height: 2.2;
+              text-align: left;
+              @include coda;
+              & a {
+                letter-spacing: 0.3rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+news-page
+================================ */
+.news-page-wrapper {
+  margin-bottom: 15%;
+  &__box {
+    margin-bottom: 5%;
+    position: relative;
+    // background-color: rgb(222, 205, 205);
+    &__item {
+      height: 200px;
+      margin-bottom: 3%;
+      display: flex;
+      align-items: center;
+      // justify-content: space-between;
+      color: #000;
+      box-shadow: 0px 0px 10px -6px rgba(0, 0, 0, 0.6);
+      &__left {
+        width: 35%;
+        & img {
+          object-fit: cover;
+          height: 200px;
+        }
+      }
+      &__right {
+        width: 65%;
+        padding: 3%;
+        &__flex {
+          display: flex;
+          &__date {
+            @include txt;
+          }
+          &__cat {
+            @include txt;
+            margin-left: 2%;
+          }
+        }
+        &__ttl {
+          font-size: clamp(1rem, 0.96rem + 0.19vw, 1.2rem);
+          line-height: 2;
+        }
+        &__dtl {
+          @include txt;
+        }
+      }
+    }
+    &::after {
+      content: "News";
+      right: 0;
+      bottom: -22%;
+      @include font-backttl-grad;
+      @include coda;
+    }
+  }
+  &__link {
+    display: flex;
+    justify-content: center;
+    // font-size: 1.2rem;
+    & a {
+      color: #000;
+      margin-right: 3%;
+      &:last-child {
+        margin-right: unset;
+      }
+    }
+  }
+}
+
+/* ================================
+res tab news
+================================ */
+body {
+  @include mq(tab) {
+    .news-page-wrapper {
+      margin-bottom: 20%;
+      &__box {
+        &::after {
+          @include font-backttl-grad-res;
+          bottom: -8%;
+        }
+        &__item {
+          height: unset;
+          flex-direction: column;
+          width: 80%;
+          margin: 0 auto 5% auto;
+          &__left {
+            width: 100%;
+            & img {
+              height: unset;
+            }
+          }
+          &__right {
+            width: 100%;
+            padding: 5%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+res sp news
+================================ */
+body {
+  @include mq(sp) {
+    .news-page-wrapper {
+      margin-bottom: 30%;
+      &__box {
+        &::after {
+          @include font-backttl-grad-res-sp;
+        }
+        &__item {
+          width: 90%;
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+about-page
+================================ */
+.about-page-wrapper {
+  margin-bottom: 10%;
+  // background-color: rgb(221, 175, 175);
+  position: relative;
+  &::after {
+    content: "About";
+    right: 0;
+    bottom: -5%;
+    @include font-backttl-grad;
+    @include coda;
+  }
+  &__intro {
+    margin-bottom: 8%;
+    &__flex {
+      display: flex;
+      justify-content: space-between;
+      &__txt {
+        width: 59%;
+        @include txt;
+        & p {
+          margin-bottom: 3%;
+          &:nth-child(2) {
+            margin-bottom: unset;
+          }
+        }
+      }
+      &__img {
+        width: 39%;
+        // height: 20vh;
+        & img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  &__company {
+    margin-bottom: 8%;
+    &__flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &__img {
+        width: 48%;
+      }
+      &__dtl {
+        width: 48%;
+        // background-color: rgb(237, 222, 222);
+        & dl {
+          display: flex;
+          flex-wrap: wrap;
+          @include txt;
+          & dt {
+            width: 25%;
+            border-bottom: 1px solid lightgray;
+            padding: 1.6% 0;
+          }
+          & dd {
+            width: 75%;
+            border-bottom: 1px solid lightgray;
+            padding: 1.6% 0;
+          }
+        }
+      }
+    }
+  }
+  &__map {
+    &__iframe {
+      margin-bottom: 3%;
+    }
+    &__add {
+      @include txt;
+    }
+  }
+}
+
+/* ================================
+res tab about-page
+================================ */
+body {
+  @include mq(tab) {
+    .about-page-wrapper {
+      margin-bottom: 20%;
+      &::after {
+        @include font-backttl-grad-res;
+      }
+      &__intro {
+        &__flex {
+          flex-direction: column;
+          &__txt {
+            margin: 0 auto;
+            width: 80%;
+            margin-bottom: 2%;
+          }
+          &__img {
+            margin: 0 auto;
+            width: 80%;
+            height: unset;
+          }
+        }
+      }
+      &__company {
+        &__flex {
+          flex-direction: column-reverse;
+          &__img {
+            width: 80%;
+          }
+          &__dtl {
+            width: 80%;
+            margin-bottom: 2%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+res sp about-page
+================================ */
+body {
+  @include mq(sp) {
+    .about-page-wrapper {
+      margin-bottom: 25%;
+      &::after {
+        @include font-backttl-grad-res-sp;
+      }
+      &__intro {
+        margin-bottom: 14%;
+        &__flex {
+          &__txt {
+            width: 90%;
+          }
+          &__img {
+            width: 90%;
+          }
+        }
+      }
+      &__company {
+        margin-bottom: 14%;
+        &__flex {
+          &__img {
+            width: 90%;
+          }
+          &__dtl {
+            width: 90%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+service-page
+================================ */
+.service-page-wrapper {
+  margin-bottom: 15%;
+  &__web {
+    margin-bottom: 8%;
+    &__ttl {
+      white-space: nowrap;
+      & span {
+        padding-left: 2%;
+        font-size: clamp(1rem, -0.3rem + 3.33vw, 1.3rem);
+      }
+    }
+    &__flex {
+      display: flex;
+      margin-bottom: 1%;
+      justify-content: space-between;
+      &__box {
+        padding: 3%;
+        background-image: linear-gradient(-90deg, #9e00ff, #2400ff 95%);
+        background-color: rgba(255, 255, 255, 0.8);
+        background-blend-mode: lighten;
+        width: 32%;
+        &__number {
+          font-size: clamp(2rem, 1.801rem + 0.94vw, 3rem);
+          margin-bottom: 6%;
+          letter-spacing: 0.2rem;
+        }
+        &__ttl {
+          font-size: clamp(1rem, 0.901rem + 0.47vw, 1.5rem);
+          margin-bottom: 6%;
+        }
+        &__txt {
+          @include txt;
+        }
+      }
+    }
+    &__txt {
+      @include txt;
+    }
+  }
+  &__carebook {
+    position: relative;
+    &::after {
+      content: "Service";
+      left: 0;
+      bottom: -20%;
+      @include font-backttl-grad;
+      @include coda;
+      z-index: 2;
+    }
+    &__flex {
+      display: flex;
+      justify-content: center;
+      &__txt {
+        width: 45%;
+        padding: 5% 2% 0 0;
+        @include txt;
+        &__button {
+          @include button;
+          margin: 10% 0;
+          & a {
+            opacity: 1;
+            padding: 15px 80px;
+          }
+        }
+      }
+      &__img {
+        width: 40%;
+      }
+    }
+  }
+}
+
+/* ================================
+res tab service-page
+================================ */
+body {
+  @include mq(tab) {
+    .service-page-wrapper {
+      margin-bottom: 20%;
+      &__web {
+        &__ttl {
+          & span {
+            font-size: clamp(0.6rem, 0.447rem + 0.77vw, 1.5rem);
+          }
+          &::before {
+            top: 20%;
+          }
+          & span {
+            padding-top: 2%;
+            display: block;
+          }
+        }
+        &__flex {
+          flex-direction: column;
+          &__box {
+            width: 80%;
+            margin: 0 auto 4% auto;
+            box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+          }
+        }
+        &__txt {
+          width: 80%;
+          margin: 0 auto;
+        }
+      }
+      &__carebook {
+        &::after {
+          @include font-backttl-grad-res;
+          bottom: -10%;
+        }
+        &__ttl {
+          white-space: nowrap;
+        }
+        &__flex {
+          flex-direction: column;
+          align-items: start;
+          &__txt {
+            width: 80%;
+            margin: 0 auto;
+            padding: 0;
+            &__button {
+              margin: 2% 0;
+              text-align: right;
+            }
+          }
+          &__img {
+            width: 80%;
+            margin: 0 auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+res sp service-page
+================================ */
+body {
+  @include mq(sp) {
+    .service-page-wrapper {
+      margin-bottom: 25%;
+      &__web {
+        margin-bottom: 14%;
+        &__flex {
+          &__box {
+            width: 90%;
+            margin: 0 auto 8% auto;
+          }
+        }
+        &__txt {
+          width: 90%;
+        }
+      }
+      &__carebook {
+        &::after {
+          @include font-backttl-grad-res-sp;
+        }
+        &__ttl {
+          // &::before {
+          //   top: 20%;
+          // }
+          // & span {
+          //   padding-top: 2%;
+          //   display: block;
+          // }
+        }
+        &__flex {
+          &__txt {
+            width: 90%;
+            &__button {
+              margin: 5% 0;
+              text-align: center;
+            }
+          }
+          &__img {
+            width: 90%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+works-page
+================================ */
+.works-page-wrapper {
+  margin-bottom: 15%;
+  &__box {
+    margin-bottom: 5%;
+    position: relative;
+    // background-color: rgb(222, 205, 205);
+    &__item {
+      height: 200px;
+      margin-bottom: 3%;
+      display: flex;
+      align-items: center;
+      // justify-content: space-between;
+      color: #000;
+      box-shadow: 0px 0px 10px -6px rgba(0, 0, 0, 0.6);
+      &__left {
+        width: 35%;
+        & img {
+          object-fit: cover;
+          height: 200px;
+        }
+      }
+      &__right {
+        padding: 3%;
+        width: 65%;
+        &__flex {
+          display: flex;
+          &__date {
+            @include txt;
+          }
+          &__cat {
+            @include txt;
+            margin-left: 2%;
+          }
+        }
+        &__ttl {
+          font-size: clamp(1rem, 0.96rem + 0.19vw, 1.2rem);
+          line-height: 2;
+        }
+        &__dtl {
+          @include txt;
+        }
+      }
+    }
+    &::after {
+      content: "Works";
+      right: 0;
+      bottom: -22%;
+      @include font-backttl-grad;
+      @include coda;
+    }
+  }
+  &__link {
+    display: flex;
+    justify-content: center;
+    // font-size: 1.2rem;
+    & a {
+      color: #000;
+      margin-right: 3%;
+      &:last-child {
+        margin-right: unset;
+      }
+    }
+  }
+}
+
+/* ================================
+res tab works
+================================ */
+body {
+  @include mq(tab) {
+    .works-page-wrapper {
+      margin-bottom: 20%;
+      &__box {
+        &::after {
+          @include font-backttl-grad-res;
+          bottom: -8%;
+        }
+        &__item {
+          height: unset;
+          flex-direction: column;
+          width: 80%;
+          margin: 0 auto 5% auto;
+          &__left {
+            width: 100%;
+            & img {
+              height: unset;
+            }
+          }
+          &__right {
+            width: 100%;
+            padding: 5%;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+res sp works
+================================ */
+body {
+  @include mq(sp) {
+    .works-page-wrapper {
+      margin-bottom: 30%;
+      &__box {
+        &::after {
+          @include font-backttl-grad-res-sp;
+        }
+        &__item {
+          width: 90%;
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+contact-page
+================================ */
+.contact-page-wrapper {
+  margin-bottom: 25%;
+  position: relative;
+  &::after {
+    content: "Contact";
+    right: 0;
+    bottom: -30%;
+    @include font-backttl-grad;
+    @include coda;
+    z-index: 2;
+  }
+  &__box {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #04004a;
+    color: #fff;
+    padding: 5% 5% 0 5%;
+    @include txt;
+    line-height: 2.5;
+    &__form {
+      &__item1 {
+        display: flex;
+        justify-content: flex-end;
+        & label {
+          width: 33%;
+          margin-bottom: 3%;
+          padding-left: 6%;
+          position: relative;
+          &::before {
+            position: absolute;
+            top: -2px;
+            left: -15px;
+            display: inline-block;
+            padding: 2px 5px;
+            content: "必須";
+            background-color: #e03131;
+            color: white;
+          }
+          & span {
+            display: block;
+            font-size: clamp(0.5rem, 0.459rem + 0.19vw, 0.7rem);
+          }
+        }
+        &__input {
+          width: 65%;
+          margin-bottom: 3%;
+          & select {
+            border: none;
+            display: inline-block;
+            width: 100%;
+            padding: 10px 0;
+            & option {
+              line-height: 2;
+            }
+          }
+        }
+      }
+      &__item {
+        display: flex;
+        justify-content: flex-end;
+        & label {
+          width: 33%;
+          margin-bottom: 3%;
+          padding-left: 6%;
+          position: relative;
+          &::before {
+            position: absolute;
+            top: -2px;
+            left: -15px;
+            display: inline-block;
+            padding: 2px 5px;
+            content: "必須";
+            background-color: #e03131;
+            color: white;
+          }
+        }
+        & input {
+          width: 65%;
+          margin-bottom: 3%;
+          border: none;
+        }
+        & textarea {
+          width: 65%;
+          height: 200px;
+          border: none;
+        }
+      }
+      &__button {
+        text-align: center;
+        padding: 6% 0;
+        &__submit {
+          all: unset;
+          display: inline-block;
+          padding: 11px 100px;
+          border: 1px solid #fff;
+          cursor: pointer;
+          opacity: 1;
+          &:hover {
+            border: 1px solid rgba(0, 0, 0, 0.1);
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+res tab contact-page
+================================ */
+body {
+  @include mq(tab) {
+    .contact-page-wrapper {
+      margin-bottom: 30%;
+      &::after {
+        @include font-backttl-grad-res;
+        bottom: -18%;
+      }
+      &__box {
+        width: 100%;
+        &__form {
+          &__item1 {
+            flex-direction: column;
+            & label {
+              width: 100%;
+              padding-left: 10%;
+              margin-bottom: 1%;
+              &::before {
+                left: 0;
+              }
+            }
+            &__input {
+              width: 100%;
+              line-height: 2.5;
+              margin-bottom: 3%;
+            }
+          }
+          &__item {
+            flex-direction: column;
+            & label {
+              width: 100%;
+              padding-left: 10%;
+              margin-bottom: 1.5%;
+              &::before {
+                left: 0;
+              }
+            }
+            & input {
+              width: 100%;
+              line-height: 2.5;
+              margin-bottom: 3%;
+            }
+            & textarea {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+res sp contact-page
+================================ */
+body {
+  @include mq(sp) {
+    .contact-page-wrapper {
+      margin-bottom: 35%;
+      &::after {
+        @include font-backttl-grad-res-sp;
+        bottom: -15%;
+      }
+      &__box {
+        &__form {
+          &__item1 {
+            & label {
+              padding-left: 13%;
+            }
+            &__input {
+              margin-bottom: 6%;
+            }
+          }
+          &__item {
+            & label {
+              padding-left: 13%;
+            }
+            & input {
+              margin-bottom: 6%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+news-single-page
+================================ */
+.news-single-page-wrapper {
+  margin-bottom: 10%;
+  &__box {
+    margin-bottom: 10%;
+    &__item {
+      width: 80%;
+      margin: 0 auto;
+      &__txt {
+        @include txt;
+        &__ttl {
+          display: none;
+        }
+        &__flex {
+          display: flex;
+          font-size: clamp(1rem, 0.927rem + 0.36vw, 1.2rem);
+          // font-size: clamp(1rem, 0.375rem + 3.23vw, 2rem);
+          &__cat {
+            padding-left: 2%;
+          }
+        }
+      }
+    }
+  }
+}
+
+body {
+  @include mq(sp) {
+    .news-single-page-wrapper {
+      &__box {
+        &__item {
+          width: 90%;
+        }
+      }
+    }
+  }
+}
+
+/* ================================
+works-single-page
+================================ */
+.works-single-page-wrapper {
+  margin-bottom: 10%;
+  &__box {
+    margin-bottom: 10%;
+    &__item {
+      width: 80%;
+      margin: 0 auto;
+      &__txt {
+        @include txt;
+        &__ttl {
+          display: none;
+        }
+        &__flex {
+          display: flex;
+          font-size: clamp(1rem, 0.927rem + 0.36vw, 1.2rem);
+          &__cat {
+            padding-left: 2%;
+          }
+        }
+        &__dtl {
+          & a {
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+}
+
+body {
+  @include mq(sp) {
+    .works-single-page-wrapper {
+      &__box {
+        &__item {
+          width: 90%;
+        }
+      }
+    }
+  }
+}

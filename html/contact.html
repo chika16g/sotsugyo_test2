@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Biwako design</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Coda&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+</html>
+<body>
+  <header id="header" class="header">
+    <div class="header-wrapper wrapper">
+      <div class="header-wrapper">
+        <div class="header-wrapper__ttl">
+          <a href="../index.html">
+            <img src="../img/fune_white.png" alt="" />
+            <h1>Biwako design</h1>
+          </a>
+        </div>
+        <nav class="header-wrapper__menu">
+          <ul class="header-wrapper__menu__list">
+            <li class="header-wrapper__menu__list__item">
+              <a href="news.html">News</a>
+            </li>
+            <li class="header-wrapper__menu__list__item">
+              <a href="about.html">About</a>
+            </li>
+            <li class="header-wrapper__menu__list__item">
+              <a href="service.html">Service</a>
+            </li>
+            <li class="header-wrapper__menu__list__item">
+              <a href="works.html">Works</a>
+            </li>
+            <li class="header-wrapper__menu__list__item">
+              <a href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="drawer"></div>
+  </header>
+  <main>
+    <section class="header-page">
+      <div class="header-page__top">
+        <h1 class="header-page__top__ttl TextTyping">Contact</h1>
+        <div class="header-page__top__contact">
+          <div class="header-page__top__contact__bg"></div>
+        </div>
+      </div>
+      <div class="header-page__breadcrumbs wrapper">
+        <ul class="header-page__breadcrumbs__list">
+          <li class="header-page__breadcrumbs__list__item">
+            <a href="../index.html">Home</a>
+          </li>
+          <li class="header-page__breadcrumbs__list__item">
+            <a href="contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="contact-page-wrapper wrapper">
+      <h2 class="contact-page-wrapper__ttl page-ttl">メールフォーム</h2>
+
+      <div class="contact-page-wrapper__box fadeUpTrigger">
+        <form class="contact-page-wrapper__box__form" method="post">
+          <div class="contact-page-wrapper__box__form__item1">
+            <label for="kinds">お問い合わせ種別</label>
+            <div class="contact-page-wrapper__box__form__item1__input">
+              <select name="kinds" id="kinds">
+                <option hidden>選択してください</option>
+                <option value="web">Webサイトの制作</option>
+                <option value="banner">バナーやロゴの制作</option>
+                <option value="sass">Sassのサービス紹介・システム開発</option>
+                <option value="other">その他</option>
+              </select>
+            </div>
+          </div>
+          <div class="contact-page-wrapper__box__form__item">
+            <label for="name">氏名</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="例）琵琶湖　太郎"
+            />
+          </div>
+
+          <div class="contact-page-wrapper__box__form__item">
+            <label for="tel">電話番号</label>
+            <input
+              type="tel"
+              id="tel"
+              name="tel"
+              placeholder="例）999-9999-9999"
+            />
+          </div>
+
+          <div class="contact-page-wrapper__box__form__item">
+            <label for="email">Eメール</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="例）example@gmail.com"
+            />
+          </div>
+
+          <div class="contact-page-wrapper__box__form__item">
+            <label for="company">会社名</label>
+            <input
+              type="company"
+              id="company"
+              name="company"
+              placeholder="例）琵琶湖株式会社"
+            />
+          </div>
+
+          <div class="contact-page-wrapper__box__form__item">
+            <label for="msg">お問い合わせ内容</label>
+            <textarea
+              id="msg"
+              name="user_message"
+              placeholder="こちらに入力をお願いします"
+            ></textarea>
+          </div>
+
+          <div class="contact-page-wrapper__box__form__button">
+            <button
+              class="contact-page-wrapper__box__form__button__submit btn bgskew"
+              type="submit"
+            >
+              <span>send</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer id="footer" class="footer">
+    <div class="footer-wrapper wrapper">
+      <div class="footer-wrapper__top">
+        <div class="footer-wrapper__top__ttl">
+          <a href="">
+            <img src="../img/fune_white.png" alt="" />
+            <p>Biwako design</p>
+          </a>
+        </div>
+        <nav class="footer-wrapper__top__menu">
+          <ul class="footer-wrapper__top__menu__list">
+            <li class="footer-wrapper__top__menu__list__item">
+              <a href="html/news.html">News</a>
+            </li>
+            <li class="footer-wrapper__top__menu__list__item">
+              <a href="html/about.html">About</a>
+            </li>
+            <li class="footer-wrapper__top__menu__list__item">
+              <a href="html/service.html">Service</a>
+            </li>
+            <li class="footer-wrapper__top__menu__list__item">
+              <a href="html/works.html">Works</a>
+            </li>
+            <li class="footer-wrapper__top__menu__list__item">
+              <a href="html/contact.html">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="footer-wrapper__under">
+        <div class="footer-wrapper__under__add">
+          <p>
+            〒520-1531<br />
+            滋賀県高島市<br
+              class="footer-wrapper__under__add__br"
+            />新旭町饗庭1600-1<br />
+            Tel : 9999-99-9999
+          </p>
+        </div>
+        <div class="footer-wrapper__under__icon">
+          <a href="#"><img src="../img/map.png" alt="" /></a>
+          <a href="#"><img src="../img/instagram.png" alt="" /></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"
+  ></script>
+  <script src="../js/text_appear.js"></script>
+  <script src="../js/hamburger.js"></script>
+  <script src="../js/fadeup.js"></script>
+</body>
